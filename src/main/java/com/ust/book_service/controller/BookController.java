@@ -29,4 +29,9 @@ public class BookController {
     public BookEntity addBooks(@RequestBody BookEntity bookEntity){
         return bookDao.save(bookEntity);
     }
+
+    @DeleteMapping("/books/{bookID}")
+    public void deleteBook(@PathVariable("bookId")long bookId){
+        bookDao.deleteById(bookId);
+    }
 }
